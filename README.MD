@@ -1,13 +1,55 @@
-# Deep Seek Crawler
+# SEO Optimization Scraper
 
-This project is a web crawler built with Python that extracts venue data (wedding reception venues) from a website using asynchronous programming with Crawl4AI. It utilizes a language model-based extraction strategy and saves the collected data to a CSV file.
+## Objective
+Analyze website content for SEO optimization by extracting:
+- Heading hierarchy (H1-H6)
+- Content structure
+- Internal linking patterns
+- Keyword usage
+- Content quality metrics
+- Generate actionable SEO recommendations
 
 ## Features
+1. **Core Analysis**
+- Heading structure validation
+- Content length analysis
+- Internal link mapping
+- Keyword density tracking
+- Missing alt text detection
+- Page speed indicators
 
-- Asynchronous web crawling using [Crawl4AI](https://pypi.org/project/Crawl4AI/)
-- Data extraction powered by a language model (LLM)
-- CSV export of extracted venue information
-- Modular and easy-to-follow code structure ideal for beginners
+2. **AI-Powered Recommendations**
+- Content restructuring suggestions
+- Semantic keyword ideas
+- Heading optimization
+- Meta tag improvements
+- Content gap analysis
+
+3. **Reporting**
+- CSV exports with detailed findings
+- Executive summary reports
+- Priority-based improvement list
+- Competitor comparison metrics
+
+## New Features
+
+### Content Analysis
+- Full HTML tag hierarchy mapping
+- Text content segmentation by section
+- CTA effectiveness scoring
+- Content gap analysis against competitors
+
+### Keyword Integration
+```tsv
+Format:
+Keyword [TAB] Type (Primary/Secondary) [TAB] Monthly Volume [TAB] 
+Difficulty [TAB] Importance [TAB] Target Pages (comma-separated)
+```
+
+### Outputs
+1. `seo_audit.csv` - Detailed technical/content analysis
+2. `conversion_analysis.csv` - CTA performance and suggestions
+3. `components.html` - WordPress-ready HTML snippets
 
 ## Project Structure
 ```
@@ -48,7 +90,7 @@ This project is a web crawler built with Python that extracts venue data (weddin
    GROQ_API_KEY=your_groq_api_key_here
    ```
 
-   *(Note: The `.env` file is in your .gitignore, so it won’t be pushed to version control.)*
+   *(Note: The `.env` file is in your .gitignore, so it won't be pushed to version control.)*
 
 ## Usage
 
@@ -72,10 +114,34 @@ You can modify these values as needed.
 
 ## Additional Notes
 
-- **Logging:** The project currently uses print statements for status messages. For production or further development, consider integrating Python’s built-in `logging` module.
+- **Logging:** The project currently uses print statements for status messages. For production or further development, consider integrating Python's built-in `logging` module.
 - **Improvements:** The code is structured in multiple modules to maintain separation of concerns, making it easier for beginners to follow and extend the functionality.
 - **Dependencies:** Ensure that the package versions specified in `requirements.txt` are installed to avoid compatibility issues.
 
 ## License
 
 Include license information if applicable.
+
+## WordPress Integration
+
+### Template Types
+1. **Landing Pages**
+   - Service-focused (e.g., "/fue-hair-transplant")
+   - Location-focused (e.g., "/new-york-hair-transplant")
+2. **Service Pages**
+   - Detailed procedure explanations
+   - Before/after galleries
+3. **Blog Components**
+   - FAQ sections
+   - Comparison tables
+   - Expert opinion blocks
+
+### Usage
+```python
+from wordpress_templates import PageTemplateGenerator
+
+generator = PageTemplateGenerator(analysis_data)
+landing_page = generator.generate_landing_page()
+with open("new_york_fue.html", "w") as f:
+    f.write(landing_page)
+```

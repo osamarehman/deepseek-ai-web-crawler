@@ -1,0 +1,34 @@
+{
+  "title": "FUE Hair Transplants in new-york",
+  "sections": [
+    {
+      "title": "Why Choose Us",
+      "content": "Custom content based on competitor gaps...",
+      "keywords": [
+        "experience",
+        "natural results",
+        "artistic hairline"
+      ]
+    },
+    {
+      "title": "Before & After Gallery",
+      "content": "Showcase of our best results...",
+      "keywords": [
+        "transplant photos",
+        "growth timeline"
+      ]
+    }
+  ],
+  "analysis": {
+    "top_competitor_keywords": [],
+    "missing_sections": [
+      "Recovery Timeline",
+      "Hairline Design Process"
+    ],
+    "content_recommendations": [
+      "Add detailed FAQ section",
+      "Include surgeon credentials",
+      "Show clinic environment photos"
+    ]
+  }
+}
